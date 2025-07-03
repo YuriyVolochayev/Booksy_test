@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booksy</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="container header-conteiner">
+        <svg class="header-logo" width="84" height="36">
+          <use href="./images/icons.svg#icon-logo"></use>
+        </svg>
+        <nav class="header-nav">
+          <ul class="header-nav-list">
+            <li class="header-nav-item">
+              <a class="header-nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="header-nav-item">
+              <a class="header-nav-link" href="#">Books</a>
+            </li>
+            <li class="header-nav-item">
+              <a class="header-nav-link" href="#">Feedbacks</a>
+            </li>
+            <li class="header-nav-item">
+              <a class="header-nav-link" href="#">Events</a>
+            </li>
+            <li class="header-nav-item">
+              <a class="header-nav-link" href="#">Location</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="burger-btn" type="button">
+          <svg class="burger-icon" width="24" height="24">
+            <use href="./images/icons.svg#icon-menu-alt-right"></use>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- *MAIN* -->
+
+    <!-- *HERO. FIRST SECTION* -->
+
+    <section class="first-section">
+      <div class="container hero-container">
+        <div class="banner-grid">
+          <div class="banner">
+            <picture>
+              <source
+                srcset="
+                  ./images/banner_1_desk.jpg    1x,
+                  ./images/banner_1_desk@2x.jpg 2x
+                "
+                media="(min-width: 1440px)" />
+              <source
+                srcset="
+                  ./images/banner_1_tab.jpg    1x,
+                  ./images/banner_1_tab@2x.jpg 2x
+                "
+                media="(min-width: 768px)" />
+              <source
+                srcset="
+                  ./images/banner_1_mob.jpg    1x,
+                  ./images/banner_1_mob@2x.jpg 2x
+                "
+                media="(max-width: 767px)" />
+              <img
+                src="./images/banner_1_mob.jpg"
+                alt="A book and a cup of coffee resting on the table."
+            /></picture>
+
+            <div class="banner-content">
+              <p class="banner-text-content">
+                Get 10% off your<br />
+                first order
+              </p>
+              <a href="#" class="banner-btn">Shop Now!</a>
+            </div>
+          </div>
+
+          <div class="banner">
+            <picture>
+              <source
+                srcset="
+                  ./images/banner_2_desk.jpg    1x,
+                  ./images/banner_2_desk@2x.jpg 2x
+                "
+                media="(min-width: 1440px)" />
+              <source
+                srcset="
+                  ./images/banner_2_tab.jpg    1x,
+                  ./images/banner_2_tab@2x.jpg 2x
+                "
+                media="(min-width: 768px)" />
+              <source
+                srcset="
+                  ./images/banner_2_mob.jpg    1x,
+                  ./images/banner_2_mob@2x.jpg 2x
+                "
+                media="(max-width: 767px)" />
+              <img
+                src="./images/banner_2_mob.jpg"
+                alt="An open book and a pair of glasses lying on the table."
+            /></picture>
+
+            <div class="banner-content">
+              <p class="banner-text-content">
+                Save 15% on<br />
+                some books
+              </p>
+              <a href="#" class="banner-btn">Shop Now!</a>
+            </div>
+          </div>
+
+          <div class="banner">
+            <picture>
+              <source
+                srcset="
+                  ./images/banner_3_desk.jpg    1x,
+                  ./images/banner_3_desk@2x.jpg 2x
+                "
+                media="(min-width: 1440px)" />
+              <source
+                srcset="
+                  ./images/banner_3_tab.jpg    1x,
+                  ./images/banner_3_tab@2x.jpg 2x
+                "
+                media="(min-width: 768px)" />
+              <source
+                srcset="
+                  ./images/banner_3_mob.jpg    1x,
+                  ./images/banner_3_mob@2x.jpg 2x
+                "
+                media="(max-width: 767px)" />
+              <img
+                src="./images/banner_3_mob.jpg"
+                alt="Shelves filled with books."
+            /></picture>
+
+            <div class="banner-content">
+              <p class="banner-text-content">
+                Summer Sale!<br />
+                Up to -40% discounts
+              </p>
+              <a href="#" class="banner-btn">Shop Now!</a>
+            </div>
+          </div>
+
+          <div class="banner">
+            <picture>
+              <source
+                srcset="
+                  ./images/banner_4_desk.jpg    1x,
+                  ./images/banner_4_desk@2x.jpg 2x
+                "
+                media="(min-width: 1440px)" />
+              <source
+                srcset="
+                  ./images/banner_4_tab.jpg    1x,
+                  ./images/banner_4_tab@2x.jpg 2x
+                "
+                media="(min-width: 768px)" />
+              <source
+                srcset="
+                  ./images/banner_4_mob.jpg    1x,
+                  ./images/banner_4_mob@2x.jpg 2x
+                "
+                media="(max-width: 767px)" />
+              <img
+                src="./images/banner_4_mob.jpg"
+                alt="An open book with flowers in a vase on the table."
+            /></picture>
+
+            <div class="banner-content">
+              <p class="banner-text-content">
+                Last chance to buy our<br />
+                spring bestsellers
+              </p>
+              <button href="#" class="banner-btn" type="button">
+                Shop Now!
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-footer">
+          <h1 class="hero-title">Discover Your Next Great Read Today!</h1>
+          <div class="hero-arrows-btn">
+            <button class="arrow-left-btn" aria-label="Previous">
+              <svg class="hero-arrows-btn-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-left-arrow-alt"></use>
+              </svg>
+            </button>
+            <button class="arrow-right-btn" aria-label="Next">
+              <svg class="hero-arrows-btn-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-right-arrow-alt"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const banners = document.querySelectorAll(".banner");
+      const prevBtn = document.querySelector(".arrow-left-btn");
+      const nextBtn = document.querySelector(".arrow-right-btn");
+
+      let currentIndex = 0;
+
+      function showBanner(index) {
+        banners.forEach((banner, i) => {
+          banner.style.display = i === index ? "block" : "none";
+        });
+      }
+
+      prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + banners.length) % banners.length;
+        showBanner(currentIndex);
+        prevBtn.blur();
+      });
+
+      nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % banners.length;
+        showBanner(currentIndex);
+        nextBtn.blur();
+      });
+
+      showBanner(currentIndex);
+
+      function updateSlider() {
+        // Показуємо активний слайд
+        banners.forEach((slide, index) => {
+          slide.style.display = index === currentIndex ? "block" : "none";
+        });
+
+        // Кнопка "назад" неактивна на першому слайді
+        if (currentIndex === 0) {
+          prevBtn.disabled = true;
+        } else {
+          prevBtn.disabled = false;
+        }
+
+        // Кнопка "вперед" неактивна на останньому слайді
+        if (currentIndex === banners.length - 1) {
+          nextBtn.disabled = true;
+        } else {
+          nextBtn.disabled = false;
+        }
+      }
+
+      nextBtn.addEventListener("click", () => {
+        if (currentIndex < banners.length - 1) {
+          currentIndex++;
+          updateSlider();
+          nextBtn.blur(); // зняти фокус
+        }
+      });
+    });
+  </script>
+</html>
