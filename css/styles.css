@@ -206,11 +206,6 @@ button {
     padding: 0px 32px;
     margin: 0 auto;
   }
-  .swiper-wrapper {
-    /* display: flex;
-    align-items: center;
-    justify-content: space-between; */
-  }
   .swiper-slide {
     border-radius: 0px;
   }

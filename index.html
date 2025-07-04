@@ -232,7 +232,8 @@
     <script>
       const swiper = new Swiper(".swiper", {
         slidesPerView: 1,
-        loop: false, // або true, якщо хочеш безкінечний слайдер
+        loop: false,
+        effect: "fade",
         spaceBetween: 0,
         navigation: {
           nextEl: ".right-btn",
@@ -247,11 +248,27 @@
       const leftBtn = document.querySelector(".left-btn");
       const rightBtn = document.querySelector(".right-btn");
 
+      leftBtn.addEventListener("click", () => {
+        leftBtn.blur();
+      });
+
+      rightBtn.addEventListener("click", () => {
+        rightBtn.blur();
+      });
+
       function toggleArrows() {
-        // Якщо не в loop-режимі, вмикаємо/вимикаємо кнопки
         if (!swiper.params.loop) {
-          leftBtn.disabled = swiper.isBeginning;
-          rightBtn.disabled = swiper.isEnd;
+          if (swiper.isBeginning) {
+            leftBtn.setAttribute("disabled", true);
+          } else {
+            leftBtn.removeAttribute("disabled");
+          }
+
+          if (swiper.isEnd) {
+            rightBtn.setAttribute("disabled", true);
+          } else {
+            rightBtn.removeAttribute("disabled");
+          }
         }
       }
     </script>
