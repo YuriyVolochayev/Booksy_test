@@ -21,6 +21,10 @@
     />
 
     <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <header class="page-header">
@@ -60,10 +64,10 @@
 
     <!-- *HERO. FIRST SECTION* -->
 
-    <section class="first-section">
-      <div class="container hero-container">
-        <div class="banner-grid">
-          <div class="banner">
+    <section class="hero">
+      <div class="container swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
             <picture>
               <source
                 srcset="
@@ -84,20 +88,21 @@
                 "
                 media="(max-width: 767px)" />
               <img
+                class="slide-img"
                 src="./images/banner_1_mob.jpg"
                 alt="A book and a cup of coffee resting on the table."
             /></picture>
 
             <div class="banner-content">
-              <p class="banner-text-content">
+              <p class="banner-text">
                 Get 10% off your<br />
                 first order
               </p>
-              <a href="#" class="banner-btn">Shop Now!</a>
+              <button href="#" class="banner-btn">Shop Now!</button>
             </div>
           </div>
 
-          <div class="banner">
+          <div class="swiper-slide">
             <picture>
               <source
                 srcset="
@@ -118,20 +123,21 @@
                 "
                 media="(max-width: 767px)" />
               <img
+                class="slide-img"
                 src="./images/banner_2_mob.jpg"
                 alt="An open book and a pair of glasses lying on the table."
             /></picture>
 
             <div class="banner-content">
-              <p class="banner-text-content">
+              <p class="banner-text">
                 Save 15% on<br />
                 some books
               </p>
-              <a href="#" class="banner-btn">Shop Now!</a>
+              <button href="#" class="banner-btn">Shop Now!</button>
             </div>
           </div>
 
-          <div class="banner">
+          <div class="swiper-slide">
             <picture>
               <source
                 srcset="
@@ -152,20 +158,21 @@
                 "
                 media="(max-width: 767px)" />
               <img
+                class="slide-img"
                 src="./images/banner_3_mob.jpg"
                 alt="Shelves filled with books."
             /></picture>
 
             <div class="banner-content">
-              <p class="banner-text-content">
+              <p class="banner-text">
                 Summer Sale!<br />
                 Up to -40% discounts
               </p>
-              <a href="#" class="banner-btn">Shop Now!</a>
+              <button href="#" class="banner-btn">Shop Now!</button>
             </div>
           </div>
 
-          <div class="banner">
+          <div class="swiper-slide">
             <picture>
               <source
                 srcset="
@@ -186,12 +193,13 @@
                 "
                 media="(max-width: 767px)" />
               <img
+                class="slide-img"
                 src="./images/banner_4_mob.jpg"
                 alt="An open book with flowers in a vase on the table."
             /></picture>
 
             <div class="banner-content">
-              <p class="banner-text-content">
+              <p class="banner-text">
                 Last chance to buy our<br />
                 spring bestsellers
               </p>
@@ -201,82 +209,48 @@
             </div>
           </div>
         </div>
-
-        <div class="section-footer">
-          <h1 class="hero-title">Discover Your Next Great Read Today!</h1>
-          <div class="hero-arrows-btn">
-            <button class="arrow-left-btn" aria-label="Previous">
-              <svg class="hero-arrows-btn-icon" width="24" height="24">
-                <use href="./images/icons.svg#icon-left-arrow-alt"></use>
-              </svg>
-            </button>
-            <button class="arrow-right-btn" aria-label="Next">
-              <svg class="hero-arrows-btn-icon" width="24" height="24">
-                <use href="./images/icons.svg#icon-right-arrow-alt"></use>
-              </svg>
-            </button>
-          </div>
+      </div>
+      <div class="container section-footer">
+        <h1 class="hero-title">Discover Your Next Great Read Today!</h1>
+        <div class="hero-arrows-btn">
+          <button class="left-btn" aria-label="Previous">
+            <svg class="hero-arrows-btn-icon" width="24" height="24">
+              <use href="./images/icons.svg#icon-left-arrow-alt"></use>
+            </svg>
+          </button>
+          <button class="right-btn" aria-label="Next">
+            <svg class="hero-arrows-btn-icon" width="24" height="24">
+              <use href="./images/icons.svg#icon-right-arrow-alt"></use>
+            </svg>
+          </button>
         </div>
       </div>
     </section>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <script>
+      const swiper = new Swiper(".swiper", {
+        slidesPerView: 1,
+        on: {
+          slideChange: toggleButtons,
+          afterInit: toggleButtons,
+        },
+      });
+
+      const prevBtn = document.querySelector(".left-btn");
+      const nextBtn = document.querySelector(".right-btn");
+
+      prevBtn.addEventListener("click", () => swiper.slidePrev());
+      nextBtn.addEventListener("click", () => swiper.slideNext());
+
+      function toggleButtons() {
+        prevBtn.disabled = swiper.isBeginning;
+        nextBtn.disabled = swiper.isEnd;
+      }
+    </script>
   </body>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const banners = document.querySelectorAll(".banner");
-      const prevBtn = document.querySelector(".arrow-left-btn");
-      const nextBtn = document.querySelector(".arrow-right-btn");
-
-      let currentIndex = 0;
-
-      function showBanner(index) {
-        banners.forEach((banner, i) => {
-          banner.style.display = i === index ? "block" : "none";
-        });
-      }
-
-      prevBtn.addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + banners.length) % banners.length;
-        showBanner(currentIndex);
-        prevBtn.blur();
-      });
-
-      nextBtn.addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % banners.length;
-        showBanner(currentIndex);
-        nextBtn.blur();
-      });
-
-      showBanner(currentIndex);
-
-      function updateSlider() {
-        // Показуємо активний слайд
-        banners.forEach((slide, index) => {
-          slide.style.display = index === currentIndex ? "block" : "none";
-        });
-
-        // Кнопка "назад" неактивна на першому слайді
-        if (currentIndex === 0) {
-          prevBtn.disabled = true;
-        } else {
-          prevBtn.disabled = false;
-        }
-
-        // Кнопка "вперед" неактивна на останньому слайді
-        if (currentIndex === banners.length - 1) {
-          nextBtn.disabled = true;
-        } else {
-          nextBtn.disabled = false;
-        }
-      }
-
-      nextBtn.addEventListener("click", () => {
-        if (currentIndex < banners.length - 1) {
-          currentIndex++;
-          updateSlider();
-          nextBtn.blur(); // зняти фокус
-        }
-      });
-    });
-  </script>
 </html>
