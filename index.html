@@ -21,6 +21,7 @@
     />
 
     <link rel="stylesheet" href="./css/styles.css" />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
@@ -66,8 +67,8 @@
 
     <section class="hero">
       <div class="container swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide">
             <picture>
               <source
                 srcset="
@@ -94,15 +95,15 @@
             /></picture>
 
             <div class="banner-content">
-              <p class="banner-text">
+              <h1 class="banner-text">
                 Get 10% off your<br />
                 first order
-              </p>
+              </h1>
               <button href="#" class="banner-btn">Shop Now!</button>
             </div>
-          </div>
+          </li>
 
-          <div class="swiper-slide">
+          <li class="swiper-slide">
             <picture>
               <source
                 srcset="
@@ -129,15 +130,15 @@
             /></picture>
 
             <div class="banner-content">
-              <p class="banner-text">
+              <h1 class="banner-text">
                 Save 15% on<br />
                 some books
-              </p>
+              </h1>
               <button href="#" class="banner-btn">Shop Now!</button>
             </div>
-          </div>
+          </li>
 
-          <div class="swiper-slide">
+          <li class="swiper-slide">
             <picture>
               <source
                 srcset="
@@ -164,15 +165,15 @@
             /></picture>
 
             <div class="banner-content">
-              <p class="banner-text">
+              <h1 class="banner-text">
                 Summer Sale!<br />
                 Up to -40% discounts
-              </p>
+              </h1>
               <button href="#" class="banner-btn">Shop Now!</button>
             </div>
-          </div>
+          </li>
 
-          <div class="swiper-slide">
+          <li class="swiper-slide">
             <picture>
               <source
                 srcset="
@@ -199,16 +200,16 @@
             /></picture>
 
             <div class="banner-content">
-              <p class="banner-text">
+              <h1 class="banner-text">
                 Last chance to buy our<br />
                 spring bestsellers
-              </p>
+              </h1>
               <button href="#" class="banner-btn" type="button">
                 Shop Now!
               </button>
             </div>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
       <div class="container section-footer">
         <h1 class="hero-title">Discover Your Next Great Read Today!</h1>
@@ -227,29 +228,31 @@
       </div>
     </section>
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
       const swiper = new Swiper(".swiper", {
         slidesPerView: 1,
+        loop: false, // або true, якщо хочеш безкінечний слайдер
+        spaceBetween: 0,
+        navigation: {
+          nextEl: ".right-btn",
+          prevEl: ".left-btn",
+        },
         on: {
-          slideChange: toggleButtons,
-          afterInit: toggleButtons,
+          init: toggleArrows,
+          slideChange: toggleArrows,
         },
       });
 
-      const prevBtn = document.querySelector(".left-btn");
-      const nextBtn = document.querySelector(".right-btn");
+      const leftBtn = document.querySelector(".left-btn");
+      const rightBtn = document.querySelector(".right-btn");
 
-      prevBtn.addEventListener("click", () => swiper.slidePrev());
-      nextBtn.addEventListener("click", () => swiper.slideNext());
-
-      function toggleButtons() {
-        prevBtn.disabled = swiper.isBeginning;
-        nextBtn.disabled = swiper.isEnd;
+      function toggleArrows() {
+        // Якщо не в loop-режимі, вмикаємо/вимикаємо кнопки
+        if (!swiper.params.loop) {
+          leftBtn.disabled = swiper.isBeginning;
+          rightBtn.disabled = swiper.isEnd;
+        }
       }
     </script>
   </body>

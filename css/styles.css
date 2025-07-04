@@ -67,7 +67,6 @@ button {
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  /* border: 1px solid black; */
 }
 
 .header-logo {
@@ -136,22 +135,22 @@ button {
 .swiper {
   padding: 0px 16px 32px 16px;
   margin: 0 auto;
-  /* border: 1px solid black; */
 }
 .swiper-slide {
-  /* position: relative; */
-  /* overflow: hidden; */
-  /* display: block; */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   border: none;
   border-radius: 8px;
-  /* height: auto; */
   margin-bottom: 24px;
 }
 
 .slide-img {
-  position: relative;
   display: block;
   margin: 0 auto;
+  width: 100%;
+  height: auto;
 }
 .banner-content {
   position: absolute;
@@ -186,12 +185,12 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding: 0px 16px 32px 16px; */
   padding-left: 16px;
   padding-right: 16px;
   margin: 0 auto;
 }
 .hero-title {
+  max-width: 340px;
   font-weight: 600;
   font-size: 40px;
   line-height: 1.2;
@@ -206,7 +205,6 @@ button {
   .swiper {
     padding: 0px 32px;
     margin: 0 auto;
-    /* border: 1px solid black; */
   }
   .swiper-wrapper {
     /* display: flex;
@@ -244,12 +242,10 @@ button {
   .section-footer {
     padding: 0px 32px;
     margin: 0 auto;
-    /* border: 1px solid black; */
   }
 
   .hero-title {
-    width: 560px;
-    height: auto;
+    max-width: 560px;
   }
 
   .hero-arrows-btn {
@@ -305,7 +301,6 @@ button {
   .swiper {
     padding: 0px 64px 32px 64px;
     margin: 0 auto;
-    /* border: 1px solid black; */
   }
   .swiper-slide {
     border-radius: 16px;
@@ -330,7 +325,7 @@ button {
     padding: 0px 64px 32px 64px;
   }
   .hero-title {
-    width: 1168px;
+    max-width: 1168px;
     height: 62 px;
     font-size: 52px;
   }
